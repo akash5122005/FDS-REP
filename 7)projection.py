@@ -1,0 +1,55 @@
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+from cartopy.io import shapereader
+from mpl_toolkits.basemap import Basemap
+#orthographic projection
+plt.figure(figsize=(5,5))
+projection=ccrs.Orthographic(central_longitude=50,central_latitude=0)
+m=Basemap()
+ax=plt.axes(projection=projection)
+ax.stock_img()
+ax.set_title('Orthographic Projection')
+plt.show()
+#robinson projection
+plt.figure(figsize=(5,5))
+projection=ccrs.Robinson()
+m=Basemap()
+ax=plt.axes(projection=projection)
+ax.stock_img()
+ax.coastlines()
+ax. set_title('Robinson Projection')
+plt.show()
+#River projection
+plt.figure(figsize=(5,5))
+projection=ccrs.Orthographic(central_longitude=77, central_latitude=27)
+m=Basemap()
+ax=plt.axes(projection=projection)
+m.drawrivers()
+ax.coastlines()
+ax. set_title('River Projection')
+plt.show()
+#Blue Marble projection
+plt.figure(figsize=(5,5))
+projection=ccrs.Orthographic(central_longitude=77,central_latitude=27)
+m=Basemap()
+ax=plt.axes(projection=projection)
+m.bluemarble()
+ax.set_title('Bluemarble Projection')
+plt.show()
+#Shaded relief projection
+plt.figure(figsize=(5,5))
+projection=ccrs. Orthographic(central_longitude=77, central_latitude=27)
+m=Basemap()
+ax=plt.axes(projection=projection)
+m. shadedrelief()
+ax.set_title('Shaded Relief Projection')
+plt.show()
+#Countries boundary
+plt.figure(figsize=(5,5))
+projection=ccrs.Orthographic(central_longitude=77,central_latitude=27)
+m=Basemap()
+ax=plt.axes(projection=projection)
+m.drawcoastlines(color='blue')
+m.drawcountries(color="red")
+ax. set_title('Countries Projection')
+plt.show()
